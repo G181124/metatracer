@@ -1,1 +1,0 @@
-# Placeholder for nucleus_ops/x1_imgmeta.py
