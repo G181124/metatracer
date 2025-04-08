@@ -1,3 +1,4 @@
+# metatracera.py
 
 import argparse
 import sys
@@ -30,6 +31,7 @@ def main():
     parser.add_argument('--fileinfo', help='Info dasar dari file')
     parser.add_argument('--geolocate', help='Deteksi lokasi dari metadata foto')
     parser.add_argument('--clean', help='Hapus metadata dari file gambar')
+    parser.add_argument('--analyze', help='Analisis lengkap metadata + lokasi GPS dari gambar')
     parser.add_argument('--export', action='store_true', help='Simpan hasil ke file di folder output')
 
     args = parser.parse_args()
@@ -54,6 +56,11 @@ def main():
     elif args.clean:
         out = get_export_path("clean", args.clean) if args.export else None
         x6_cleanmeta.run(args.clean, out)
+    elif args.analyze:
+        meta_out = get_export_path("analyze_meta", args.analyze) if args.export else None
+        gps_out = get_export_path("analyze_gps", args.analyze) if args.export else None
+        x1_imgmeta.run(args.analyze, meta_out)
+        x5_geolocate.run(args.analyze, gps_out)
     else:
         parser.print_help()
 
