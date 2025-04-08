@@ -13,6 +13,18 @@ from nucleus_ops import (
     x6_cleanmeta
 )
 
+def print_banner():
+    banner = r'''
+                    __        __                                 
+    ____ ___  ___  / /_____ _/ /__________ _________  _________ _
+   / __ `__ \/ _ \/ __/ __ `/ __/ ___/ __ `/ ___/ _ \/ ___/ __ `/
+  / / / / / /  __/ /_/ /_/ / /_/ /  / /_/ / /__/  __/ /  / /_/ / 
+ /_/ /_/ /_/\___/\__/\__,_/\__/\_/   \__,_/\___/\___/_/   \__,_/  
+                                                                  
+                              MetaTraceRA                        
+'''
+    print(banner)
+
 def get_export_path(module_name, original_path):
     basename = os.path.basename(original_path)
     name, _ = os.path.splitext(basename)
@@ -21,6 +33,8 @@ def get_export_path(module_name, original_path):
     return filename
 
 def main():
+    print_banner()
+
     parser = argparse.ArgumentParser(
         description='MetaTraceRA - Metadata Analyzer CLI Tool'
     )
