@@ -99,7 +99,6 @@ Semua hasil ekspor akan disimpan otomatis ke folder `output/` dengan nama unik b
 ## 🧪 Catatan
 - `--geolocate` hanya bekerja jika metadata GPS tersedia
 - `--clean` hanya untuk file gambar (format JPEG)
-- Tool ini tidak menyimpan data apa pun secara permanen
 
 ---
 
